@@ -1,25 +1,38 @@
-//Given an array of strings, use a function to reverse all the elements in the string in ascending order and the specific elements in descending order
-function sortArray(){
-    let arr1= ["red", "blue","yellow", "black"];
-    console.log(arr1.sort());
-    console.log(arr1.reverse());
-   
+// Q1:Given an array of strings, use a function to reverse all the elements in the string in ascending order and the specific elements in descending order
+function reverseStringsArray(arr) {
+    const reversedStrings = arr.map(str => [...str].reverse().join(''));
+    console.log(reversedStrings);
 }
-sortArray()
-//Write a function that accepts an array of numbers and uses the forEach() method to console.log each number multiplied by 2.
-   function multiplication(numbers){
-    numbers.forEach((number)=>{
-        console.log(number * 2);
-       
-    })
-   } 
-   multiplication([7,5,1,8])
-
-   //Write a function that takes in an array of numbers and consoles the first four items multiplied by 8 and the last two added by 5. Console the array with the new values
-   function valuesArray(arr){
-    let firstFour = arr.slice(0,4).map(item => * 8);
-    let nextTwo = arr.slice(-2).map(item => item +5 );
-    const newArray = firstFour.concat(nextTwo);
-    console.log(newArray);
+// Example
+reverseStringsArray(["Kenya", "Uganda", "India", "Burundi"]);
+// Q2: Using JS functions and an array of numbers, return positive if an element within the array is positive, negative if an element is negative, else zero
+function checkElement(array, index) {
+    const number = array[index];
+    if (number > 0) {
+       return number + " is positive";
+    } else if (number < 0) {
+       return number + " is negative";
+    } else {
+       return number + " is zero";
+    }
+}
+ // Example
+   const numbers = [1, -2, 0, 3, -4];
+   console.log(checkElement(numbers, 3));
+  // Q3: Given an array of objects, where each object represents an employee with an id, name, and salary property, write a function that returns a new array of employee objects sorted by their salary in ascending order.
+   function sortBySalary(employees) {
+    return employees.sort((a, b) => a.salary - b.salary);
    }
-   valuesArray([6,2,78,5,10,8]);
+   // Example
+   const employees = [
+    { id: 1, name: 'Alice', salary: 8000 },
+    { id: 2, name: 'Bob', salary: 60000 },
+    { id: 3, name: 'Charlie', salary: 40000 }
+   ];
+   const sortedEmployees = sortBySalary(employees);
+   console.log(sortedEmployees);
+// Q4: Write a function that accepts an array of numbers and uses the forEach() method to console.log each number multiplied by 2.
+   function doubledNum(numbers) {
+    numbers.forEach((number) => {
+       console.log(number * 2);
+})};
